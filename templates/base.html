@@ -180,6 +180,22 @@ h3 {
 * {
     transition: all 0.2s ease-in-out;
 }
+.alert {
+    border-radius: 10px;
+    font-weight: 500;
+    animation: fadeAlert 0.5s ease-in-out;
+}
+
+@keyframes fadeAlert {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
     </style>
        .card, .form-control, .btn {
     border-radius: 12px !important;
