@@ -1,11 +1,21 @@
-{% block title %}About - My Blog{% endblock %}
 {% extends "base.html" %}
 {% set hero_image = url_for('static', filename='images/about.jpg') %}
+
+{% block title %}About - My Blog{% endblock %}
 
 {% block content %}
 <div class="hero">
     <div class="hero-text">
         <h1>About Us</h1>
+        <p class="mt-3">Learn more about our mission and platform.</p>
     </div>
+</div>
+
+<div class="container mt-5">
+    <h2>Our Mission</h2>
+    <p>
+        This Flask blog platform was built to demonstrate modern web development
+        practices using Flask, Bootstrap, and dynamic UI enhancements.
+    </p>
 </div>
 {% endblock %}

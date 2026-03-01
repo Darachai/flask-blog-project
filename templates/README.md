@@ -1,52 +1,84 @@
 # Flask Blog Project
 
-## 📌 Description
-This project is a blog website built using Flask and Bootstrap.
-It supports full CRUD operations and multiple web pages.
+## 📌 Overview
+A simple blog website built with **Flask** and **Bootstrap**.  
+This project supports full CRUD operations and user authentication.
+
+---
 
 ## 🚀 Features
-- Home Page
+
+### 📝 Blog System
 - Create Post
 - Edit Post
 - Delete Post
-- About Page
-- Contact Page
-- Profile Page
-- Login & Register Pages
-- SQLite Database
+- View All Posts
 
-## 🛠 Technologies Used
+### 👤 User System
+- Register
+- Login
+- Profile Page
+
+### 📄 Additional Pages
+- Home
+- About
+- Contact
+
+---
+
+## 🛠 Tech Stack
 - Python
 - Flask
 - SQLite
+- SQLAlchemy
 - HTML
 - Bootstrap
 
+---
+
+## 🗄 Database
+
+This project uses **SQLite** with **SQLAlchemy ORM**.
+
+### Post Model
+
+| Field         | Description      |
+|--------------|------------------|
+| id           | Post ID          |
+| title        | Post title       |
+| content      | Post content     |
+| date_created | Created date     |
+
+---
+
 ## 📦 Installation
-1. Clone the repository
 
+### 1. Clone Repository
+```bash
 git clone https://github.com/Darachai/flask-blog-project.git
+cd flask-blog-project
+```
 
-
-2. Install dependencies
+### 2. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-## ▶ Run
+---
+
+## ▶ Run the Project
+
+```bash
 python app.py
+```
 
-Then open:
+Open your browser and go to:
+
+```
 http://127.0.0.1:5000
+```
 
 ---
 
 ## 👨‍💻 Author
 Darachai
-กด Commit changes
-
-## Database
-This project uses SQLite with SQLAlchemy ORM.
-The Post model includes:
-- id
-- title
-- content
-- date_created

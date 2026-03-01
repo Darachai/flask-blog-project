@@ -1,16 +1,16 @@
-{% block title %}Home - My Blog{% endblock %}
 {% extends "base.html" %}
 
-{% set hero_image = url_for('static', filename='images/home.jpg') %}
+{% block title %}Home - My Blog{% endblock %}
 
 {% block content %}
 
-<div class="hero">
+<div class="hero" style="background-image: url('{{ url_for('static', filename='images/home.jpg') }}');">
     <div class="hero-text">
         <h1>Welcome to My Flask Blog</h1>
-        <a href="{{ url_for('posts') }}" class="btn-custom">View Posts</a>
+        <a href="/posts" class="btn btn-lg btn-custom px-4 py-2 mt-3">
+            View Posts
+        </a>
     </div>
-    <div class="section-divider"></div>
 </div>
 
 {% endblock %}
