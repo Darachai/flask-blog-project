@@ -157,6 +157,15 @@
     }
 }
     </style>
+    .footer-link {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ff6b6b;
+}
     .footer {
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -164,6 +173,16 @@
 
 </head>
 <footer class="footer mt-5 py-4 bg-dark text-light text-center">
+    <footer class="footer mt-5 py-4 bg-dark text-light text-center">
+    <div class="container">
+        <p class="mb-1">© 2026 My Flask Blog. All rights reserved.</p>
+        <small>
+            <a href="/" class="footer-link">Home</a> |
+            <a href="/about" class="footer-link">About</a>
+  
+        </small>
+    </div>
+</footer>
     <div class="container">
         <p class="mb-1">© 2026 My Flask Blog. All rights reserved.</p>
         <small>Built with Flask & Bootstrap</small>
