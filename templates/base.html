@@ -156,6 +156,14 @@
         transform: translateY(0);
     }
 }
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
     </style>
        .card, .form-control, .btn {
     border-radius: 12px !important;
@@ -176,7 +184,9 @@
 .form-control:focus {
     border-color: #ff6b6b;
     box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+
 }
+
 </head>
 <footer class="footer mt-5 py-4 bg-dark text-light text-center">
     <footer class="footer mt-5 py-4 bg-dark text-light text-center">
