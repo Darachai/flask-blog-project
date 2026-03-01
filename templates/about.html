@@ -1,5 +1,10 @@
 {% extends "base.html" %}
+{% set hero_image = url_for('static', filename='images/about.jpg') %}
+
 {% block content %}
-<h2>About This Website</h2>
-<p>This website is built using Flask and Bootstrap.</p>
+<div class="hero">
+    <div class="hero-text">
+        <h1>About Us</h1>
+    </div>
+</div>
 {% endblock %}

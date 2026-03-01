@@ -1,5 +1,10 @@
 {% extends "base.html" %}
+{% set hero_image = url_for('static', filename='images/contact.jpg') %}
+
 {% block content %}
-<h2>Contact</h2>
-<p>Email: example@email.com</p>
+<div class="hero">
+    <div class="hero-text">
+        <h1>Contact Us</h1>
+    </div>
+</div>
 {% endblock %}
