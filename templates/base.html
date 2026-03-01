@@ -308,10 +308,13 @@ window.onscroll = function() {
         transform: translateY(0);
     }
 }
+.navbar-brand {
+    letter-spacing: 1px;
+}
 </script>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 shadow-sm">
-    <a class="navbar-brand fw-bold" href="/">MyBlog</a>
+    <a class="navbar-brand fw-bold fs-4" href="/">MyBlog</a>
     <div class="navbar-nav">
 <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
 <a class="nav-link {% if request.path == '/posts' %}active{% endif %}" href="/posts">Posts</a>
