@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>All Posts</h2>
+
+{% for post in posts %}
+<div class="card mb-3 p-3">
+    <h4>{{ post.title }}</h4>
+    <p>{{ post.content }}</p>
+
+    <div class="mt-2">
+    <a href="/edit/{{ post.id }}" class="btn btn-warning btn-sm me-2">Edit</a>
+    <a href="/delete/{{ post.id }}" class="btn btn-danger btn-sm">Delete</a>
+</div>
+{% endfor %}
+
+{% endblock %}
