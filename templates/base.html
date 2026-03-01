@@ -1,402 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Blog{% endblock %}</title>
     <meta name="description" content="A modern Flask blog platform built with Bootstrap and dynamic UI enhancements.">
-<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 
-    <!-- Google Font (เพิ่มความโปร) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
-}
-        .nav-link {
-    transition: color 0.3s ease, transform 0.2s ease;
+    animation: pageFade 0.4s ease-in-out;
 }
 
-.nav-link:hover {
-    transform: translateY(-2px);
+@keyframes pageFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
-    html {
-    scroll-behavior: smooth;
-}    
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-        }
 
-        /* HERO SECTION */
-        .hero {
-            background-image: url("{{ hero_image }}");
-        .hero {
-    background-image: 
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
-        url("../images/home.jpg");
-    height: 80vh;
+.hero {
+    background-image: url("{{ hero_image }}");
     background-size: cover;
     background-position: center;
-}    
-.hero-text h1 {
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
 }
-            height: 80vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 15px;
-            color: white;
-            text-align: center;
-        }
 
-    .hero-text {
+.hero-text {
     background: rgba(0,0,0,0.65);
     padding: 50px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    max-width: 600px;
-    animation: fadeIn 1.2s ease-in-out;
 }
 
 .hero-text h1 {
     font-size: 48px;
     font-weight: 700;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
-.hero-text p {
-    font-size: 18px;
-    opacity: 0.9;
-}
-            animation: fadeIn 1.2s ease-in-out;
-        }
-
-        /* CUSTOM BUTTON */
-        .btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+.btn, .btn-custom {
     background: #ff6b6b;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: all 0.3s ease;
 }
 
-.btn:hover {
-    background: #ff4b4b;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-        .btn-custom {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #ff6b6b;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            background: #ff4b4b;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-        .btn, .btn-custom {
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
 .btn:hover, .btn-custom:hover {
-    transform: scale(1.05);
-}
-
-        /* FADE ANIMATION */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    .nav-link.active 
-    
-    /* Responsive Design */
-@media (max-width: 768px) {
-
-    .hero {
-        height: 60vh;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .hero-text {
-        padding: 30px;
-    }
-
-    .hero-text h1 {
-        font-size: 32px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-    }
-
-    .navbar-nav {
-        text-align: center;
-    }
-
-}
-.navbar {
-    transition: all 0.3s ease;
-}
-.container {
-    animation: fadePage 0.6s ease-in-out;
-}
-
-@keyframes fadePage {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-h1, h2, h3 {
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-h2 {
-    margin-top: 30px;
-}
-
-h3 {
-    margin-top: 20px;
-    font-weight: 600;
-}
-* {
-    transition: all 0.2s ease-in-out;
-}
-.alert {
-    border-radius: 10px;
-    font-weight: 500;
-    animation: fadeAlert 0.5s ease-in-out;
-}
-
-@keyframes fadeAlert {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-#loading-spinner {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-}
-.section-divider {
-    height: 1px;
-    background-color: #ddd;
-    margin: 40px 0;
-}
-#scrollTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-}
-
-#scrollTopBtn:hover {
-    background-color: #ff4b4b;
-}
-::selection {
-    background-color: #ff6b6b;
-    color: white;
-}
-body {
-    animation: pageFade 0.4s ease-in-out;
-}
-
-@keyframes pageFade {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-button, .btn, .btn-custom {
-    cursor: pointer;
-}
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f4f6f9;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #ff6b6b;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
     background: #ff4b4b;
-}
-::placeholder {
-    color: #999;
-    font-style: italic;
-    opacity: 0.8;
-}
-.container {
-    border: 1px solid #eaeaea;
-    padding: 25px;
-    background-color: #ffffff;
-    border-radius: 10px;
-}
-p {
-    line-height: 1.7;
-}
-a {
-    transition: color 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-3px) scale(1.05);
 }
 
-a:hover {
-    opacity: 0.8;
-}
 .navbar-brand {
+    letter-spacing: 1px;
     transition: transform 0.3s ease;
 }
 
 .navbar-brand:hover {
     transform: scale(1.05);
 }
-section {
-    margin-bottom: 40px;
+
+.navbar-scrolled {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.container > * {
-    margin-bottom: 20px;
-}
-    </style>
-       .card, .form-control, .btn {
-    border-radius: 12px !important;
-}
-    .footer-link {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-    color: #ff6b6b;
-}
-    .footer {
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
-.form-control:focus {
-    border-color: #ff6b6b;
-    box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
-
-}
 .footer {
+    font-size: 14px;
     padding-bottom: 20px;
 }
 
+p {
+    line-height: 1.7;
+}
+</style>
 </head>
-<footer class="footer mt-5 py-4 bg-dark text-light text-center">
-    <footer class="footer mt-5 py-4 bg-dark text-light text-center">
-    <div class="container">
-        <p class="mb-1">© 2026 My Flask Blog. All rights reserved.</p>
-        <small>
-            <a href="/" class="footer-link">Home</a> |
-            <a href="/about" class="footer-link">About</a>
-  
-        </small>
+
+<body>
+
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <a class="navbar-brand fw-bold fs-4" href="/">MyBlog</a>
+    <div class="navbar-nav">
+        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
+        <a class="nav-link {% if request.path == '/posts' %}active{% endif %}" href="/posts">Posts</a>
+        <a class="nav-link {% if request.path == '/create' %}active{% endif %}" href="/create">Create</a>
+        <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="/about">About</a>
+        <a class="nav-link {% if request.path == '/contact' %}active{% endif %}" href="/contact">Contact</a>
+        <a class="nav-link {% if request.path == '/profile' %}active{% endif %}" href="/profile">Profile</a>
+        <a class="nav-link {% if request.path == '/login' %}active{% endif %}" href="/login">Login</a>
+        <a class="nav-link {% if request.path == '/register' %}active{% endif %}" href="/register">Register</a>
     </div>
-</footer>
+</nav>
+
+<div class="container mt-4" style="max-width: 1100px;">
+    {% block content %}{% endblock %}
+</div>
+
+<footer class="footer mt-5 py-4 bg-dark text-light text-center">
     <div class="container">
         <p class="mb-1">© 2026 My Flask Blog. All rights reserved.</p>
         <small>Built with Flask & Bootstrap</small>
     </div>
 </footer>
-<div id="loading-spinner" style="display:none;">
-    <div class="spinner-border text-danger" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>
-</div>
-<button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-    ↑
-</button>
-<script>
-window.onscroll = function() {
-    const btn = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-};
-.card {
-    opacity: 0;
-    animation: fadeCard 0.6s ease-in-out forwards;
-}
 
-@keyframes fadeCard {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.navbar-brand {
-    letter-spacing: 1px;
-}
-.navbar-scrolled {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s ease;
-}
-</script>
 <script>
 window.addEventListener("scroll", function() {
     const navbar = document.getElementById("mainNavbar");
@@ -407,24 +120,6 @@ window.addEventListener("scroll", function() {
     }
 });
 </script>
-<body>
-<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <a class="navbar-brand fw-bold fs-4" href="/">MyBlog</a>
-    <div class="navbar-nav">
-<a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
-<a class="nav-link {% if request.path == '/posts' %}active{% endif %}" href="/posts">Posts</a>
-<a class="nav-link {% if request.path == '/create' %}active{% endif %}" href="/create">Create</a>
-<a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="/about">About</a>
-<a class="nav-link {% if request.path == '/contact' %}active{% endif %}" href="/contact">Contact</a>
-<a class="nav-link {% if request.path == '/profile' %}active{% endif %}" href="/profile">Profile</a>
-<a class="nav-link {% if request.path == '/login' %}active{% endif %}" href="/login">Login</a>
-<a class="nav-link {% if request.path == '/register' %}active{% endif %}" href="/register">Register</a>
-    </div>
-</nav>
-
-<div class="container mt-4" style="max-width: 1100px;">
-    {% block content %}{% endblock %}
-</div>
 
 </body>
 </html>
